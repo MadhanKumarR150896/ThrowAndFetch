@@ -118,11 +118,11 @@ body {
 
 .ball {
   position: absolute;
-  width:3%;
-  height:4%;
+  width:2%;
+  height:3%;
   border-radius: 50%;
   top:83%;
-  left:2%;
+  left:3%;
   border: 2px solid black;
   background-color: yellow;
 }
@@ -171,7 +171,7 @@ body {
 .left-fore-limb,.right-fore-limb {
   position:absolute;
   height:30%;
-  width:3%;
+  width:2.5%;
   top:37%;
   background-color: black;
   border-radius:20% 20% 40% 40%;
@@ -190,7 +190,7 @@ body {
 .left-hind-limb,.right-hind-limb {
   position:absolute;
   height:30%;
-  width:3%;
+  width:2.5%;
   top:37%;
   background-color: black;
   border-radius:20% 20% 40% 40%;
@@ -198,7 +198,7 @@ body {
 
 .left-hind-limb {
   transform:rotate(25deg);
-  left:33%;
+  left:34%;
 }
 
 .right-hind-limb {
@@ -209,8 +209,8 @@ body {
 .dog-tail {
   position:absolute;
   height:7%;
-  width:15%;
-  top:24%;
+  width:12%;
+  top:26%;
   left:40%;
   background-color: black;
   border-radius:10% 10% 95% 10%;
