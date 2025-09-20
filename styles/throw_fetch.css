@@ -1,0 +1,218 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body {
+  width:100vw;
+  height:100vh;
+  background-color:white;
+  display:flex;
+}
+
+.background {
+  position:relative;
+  width:850px;
+  height:500px;
+  margin:auto auto;
+  background: linear-gradient(45deg, rgb(142, 229, 245),rgb(238, 232, 183));
+  box-shadow:0 0 25px rgba(0,0,0,0.7);
+  overflow:clip;
+}
+
+
+.sun {
+  position:absolute;
+  width:20%;
+  height:25%;
+  border-radius: 50%;
+  top:-4%;
+  right:-7%;
+  background:radial-gradient(yellow, rgb(173, 163, 67));
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+.human {
+  position:absolute;
+  width:20%;
+  height:40%;
+  bottom:0;
+}
+
+.human-head {
+  position:absolute;
+  width:20%;
+  height:20%;
+  border-radius:50%;
+  background-color: black;
+  top:5%;
+  left:30%;
+  z-index: 101;
+}
+
+.human-head-inner {
+  position:absolute;
+  width:78%;
+  height:80%;
+  border-radius:50%;
+  background-color: white;
+  top:10%;
+  left:12%;
+}
+
+.human-body {
+  position:absolute;
+  height:38%;
+  width:15%;
+  left:30%;
+  top:24%;
+  background-color: black;
+  z-index:100;
+  border-radius: 40% 40% 30% 30%;
+}
+
+.human-right-leg {
+  position:absolute;
+  height:30%;
+  width:4%;
+  top:60%;
+  background-color: black;
+  left:28%;
+  transform:rotate(15deg);
+  border-radius:20% 20% 40% 40%;
+}
+
+.human-left-leg {
+   position:absolute;
+  height:30%;
+  width:4%;
+  top:60%;
+  background-color: black;
+  left:43%;
+  transform:rotate(-15deg);
+  border-radius:20% 20% 40% 40%;
+}
+
+.human-right-hand {
+  position:absolute;
+  height:30%;
+  width:4%;
+  top:30%;
+  background-color: black;
+  left:25%;
+  transform:rotate(25deg);
+  border-radius:40%
+}
+
+.human-left-hand {
+  position:absolute;
+  height:30%;
+  width:4%;
+  top:30%;
+  background-color: black;
+  left:46%;
+  transform:rotate(-25deg);
+  border-radius:40%
+}
+
+.ball {
+  position: absolute;
+  width:3%;
+  height:4%;
+  border-radius: 50%;
+  top:83%;
+  left:2%;
+  border: 2px solid black;
+  background-color: yellow;
+}
+
+.dog {
+  position:absolute;
+  width:30%;
+  height:20%;
+  bottom:0%;
+  left:12%;
+}
+
+.dog-head {
+  position:absolute;
+  width:10%;
+  height:25%;
+  border-radius:50%;
+  background-color: black;
+  left:10%;
+  bottom:65%;
+  z-index: 101;
+  transform:rotate(12deg);
+}
+
+.dog-head-inner {
+  position:absolute;
+  width:75%;
+  height:75%;
+  border-radius:50%;
+  background-color: white;
+  top:10%;
+  left:8%;
+}
+
+.dog-body {
+  position:absolute;
+  height:25%;
+  width:25%;
+  left:18%;
+  top:20%;
+  background-color: black;
+  z-index:100;
+  border-radius: 40% 50% 40% 50%;
+}
+
+.left-fore-limb,.right-fore-limb {
+  position:absolute;
+  height:30%;
+  width:3%;
+  top:37%;
+  background-color: black;
+  border-radius:20% 20% 40% 40%;
+}
+
+.left-fore-limb {
+  transform:rotate(25deg);
+  left:20%;
+}
+
+.right-fore-limb {
+  transform: rotate(-25deg);
+  left:25%;
+}
+
+.left-hind-limb,.right-hind-limb {
+  position:absolute;
+  height:30%;
+  width:3%;
+  top:37%;
+  background-color: black;
+  border-radius:20% 20% 40% 40%;
+}
+
+.left-hind-limb {
+  transform:rotate(25deg);
+  left:33%;
+}
+
+.right-hind-limb {
+  transform: rotate(-25deg);
+  left:39%;
+}
+
+.dog-tail {
+  position:absolute;
+  height:7%;
+  width:15%;
+  top:24%;
+  left:40%;
+  background-color: black;
+  border-radius:10% 10% 95% 10%;
+  transform: rotate(-25deg);
+}
