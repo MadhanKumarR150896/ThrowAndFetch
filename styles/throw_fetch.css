@@ -8,17 +8,17 @@ body {
   width:100vw;
   height:100vh;
   background-color:white;
-  display:flex;
+  display:grid;
 }
 
 .background {
   position:relative;
   width:850px;
   height:500px;
-  margin:auto auto;
+  margin:auto;
+  box-shadow: 0 0 25px rgba(0,0,0,0.7) ;
   background: linear-gradient(45deg, rgb(142, 229, 245),rgb(238, 232, 183));
-  box-shadow:0 0 25px rgba(0,0,0,0.7);
-  overflow:clip;
+  overflow:hidden;
 }
 
 
@@ -49,6 +49,14 @@ body {
   top:5%;
   left:30%;
   z-index: 101;
+  animation: headMoveH 2s 15s;
+}
+
+@keyframes headMoveH {
+  50% {
+    top:10%;
+    left:50%;
+  }
 }
 
 .human-head-inner {
@@ -70,13 +78,21 @@ body {
   background-color: black;
   z-index:100;
   border-radius: 40% 40% 30% 30%;
+  animation: bodyMove 2s 15s;
+}
+
+@keyframes bodyMove {
+  50% {
+    transform-origin: center bottom;
+    transform: rotate(25deg);
+  }
 }
 
 .human-right-leg {
   position:absolute;
   height:30%;
   width:4%;
-  top:60%;
+  top:58%;
   background-color: black;
   left:28%;
   transform:rotate(15deg);
@@ -87,7 +103,7 @@ body {
    position:absolute;
   height:30%;
   width:4%;
-  top:60%;
+  top:58%;
   background-color: black;
   left:43%;
   transform:rotate(-15deg);
@@ -104,11 +120,20 @@ body {
   transform-origin: 0 0;
   transform:rotate(25deg);
   border-radius:40%;
-  animation: handMove 1s 3s;
+  animation: handMove1 2s 3s,
+    handMove2 2s 15s;
 }
 
-@keyframes handMove {
+@keyframes handMove1 {
   50% {
+    transform: rotate(-25deg);
+  }
+}
+
+@keyframes handMove2 {
+  50% {
+    transform-origin: -100% -100%;
+    top:40%;
     transform: rotate(-25deg);
   }
 }
@@ -121,7 +146,17 @@ body {
   background-color: black;
   left:46%;
   transform:rotate(-25deg);
-  border-radius:40%
+  border-radius:40%;
+  animation: handMove3 2s 15s;
+    
+}
+
+@keyframes handMove3 {
+  50% {
+    transform-origin: -40% -40%;
+    top:40%;
+    transform: rotate(-25deg);
+  }
 }
 
 .ball {
@@ -131,19 +166,63 @@ body {
   left:3%;
   top:83%;
   border-radius: 50%;
-  border: 2px solid black;
+  border: 1px solid black;
   background-color: yellow;
-  animation: ballFlow 3s 3s both ;
+  animation: ballThrow 6s 3s both ,
+    ballFetch 0.3s 10s forwards,
+    ballBack 3s 11s forwards,
+    ballOldPos 1s 16s forwards;
   
 }
 
-@keyframes ballFlow {
+@keyframes ballThrow {
   50% {
     top:50%;
   }
-  100% {
+  90% {
     left:93%;
-    top:90%;
+    top:89%;
+  }
+  100%{
+    left:93%;
+    top:85%;
+  }
+}
+
+@keyframes ballFetch {
+  100% {
+    left:80%;
+  }
+}
+
+@keyframes ballBack {
+   0% {
+    left:80%;
+  }
+  20% {
+    left:66%
+  }
+  40%{
+    left:52%;
+  }
+  60%{
+    left:38%
+  }
+  80%{
+    left:26%;
+  }
+  100%{
+    left:11%
+  }
+}
+
+@keyframes ballOldPos {
+  0% {
+    left:11%
+  }
+  100% {
+    left:3%;
+    top:83%
   }
 }
 
@@ -154,7 +233,11 @@ body {
   bottom:0%;
   left:12%;
   transform:scaleX(1);
-  animation: dogTurn 0.3s 4s both;
+  animation: dogTurn 0.3s 4s both,
+    dogRun 3s 5s forwards,
+    dogTurnBack 0.3s 10s forwards,
+    dogReturn 3s 11s forwards,
+    dogOldPos 0.5s 18s forwards;
   
 }
 
@@ -164,6 +247,59 @@ body {
   }
 }
 
+@keyframes dogRun {
+  20% {
+    left:22%;
+  }
+  40% {
+    left:36%
+  }
+  60%{
+    left:50%;
+  }
+  80%{
+    left:64%
+  }
+  100%{
+    left:78%
+  }
+}
+
+@keyframes dogTurnBack {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes dogReturn {
+  0% {
+    left:78%;
+  }
+  20% {
+    left:64%
+  }
+  40%{
+    left:50%;
+  }
+  60%{
+    left:36%
+  }
+  80%{
+    left:24%;
+  }
+  100%{
+    left:9%
+  }
+}
+
+@keyframes dogOldPos {
+   10% {
+    left:9%
+  }
+  100% {
+    left:12%;
+  }
+}
 
 .dog-head {
   position:absolute;
@@ -175,6 +311,13 @@ body {
   bottom:65%;
   z-index: 101;
   transform:rotate(12deg);
+  animation: headMoveD 1s 8s;
+}
+
+@keyframes headMoveD {
+  50% {
+    bottom:50%;
+  }
 }
 
 .dog-head-inner {
@@ -208,13 +351,19 @@ body {
 }
 
 .left-fore-limb {
+  transform-origin: 0 0;
   transform:rotate(25deg);
   left:20%;
+  animation: leftForeRun 3s 5s forwards,
+    leftForeReturn 3s 11s forwards;
 }
 
 .right-fore-limb {
+  transform-origin: 0 0;
   transform: rotate(-25deg);
   left:25%;
+  animation: rightForeRun 3s 5s forwards,
+    rightForeReturn 3s 11s forwards;
 }
 
 .left-hind-limb,.right-hind-limb {
@@ -227,13 +376,91 @@ body {
 }
 
 .left-hind-limb {
+  transform-origin: 0 0;
   transform:rotate(25deg);
   left:34%;
+  animation: leftHindRun 3s 5s forwards,
+    leftHindReturn 3s 11s forwards;
 }
 
 .right-hind-limb {
+  transform-origin: 0 0;
   transform: rotate(-25deg);
   left:39%;
+  animation: rightHindRun 3s 5s forwards,
+    rightHindReturn 3s 11s forwards;
+}
+
+@keyframes leftForeRun {
+  0%, 40%, 80% {
+    transform:rotate(-25deg);
+  }
+  20%, 60%, 100% {
+    transform:rotate(25deg);
+  }
+}
+
+@keyframes rightForeRun {
+  0%, 40%, 80% {
+    transform:rotate(25deg);
+  }
+ 20%, 60%, 100%{
+    transform:rotate(-25deg);
+  }
+}
+
+@keyframes leftHindRun {
+  0%, 40%, 80% {
+    transform:rotate(-25deg);
+  }
+  20%, 60%, 100% {
+    transform:rotate(25deg);
+  }
+}
+
+@keyframes rightHindRun {
+ 0%, 40%, 80% {
+    transform:rotate(25deg);
+  }
+ 20%, 60%, 100%{
+    transform:rotate(-25deg);
+  }
+}
+
+@keyframes leftForeReturn {
+  0%, 40%, 80% {
+    transform:rotate(-25deg);
+  }
+  20%, 60%, 100% {
+    transform:rotate(25deg);
+  }
+}
+
+@keyframes rightForeReturn {
+  0%, 40%, 80% {
+    transform:rotate(25deg);
+  }
+ 20%, 60%, 100%{
+    transform:rotate(-25deg);
+  }
+}
+
+@keyframes leftHindReturn {
+  0%, 40%, 80% {
+    transform:rotate(-25deg);
+  }
+  20%, 60%, 100% {
+    transform:rotate(25deg);
+  }
+}
+
+@keyframes rightHindReturn {
+  0%, 40%, 80% {
+    transform:rotate(25deg);
+  }
+ 20%, 60%, 100%{
+    transform:rotate(-25deg);
+  }
 }
 
 .dog-tail {
@@ -250,18 +477,10 @@ body {
 }
 
 @keyframes tailWag {
-  10% {
+  10%, 80% {
     transform:rotate(-15deg);
   }
-  40% {
+  40%, 100% {
     transform:rotate(-25deg);
   }
-  80% {
-    transform: rotate(-15deg);
-  }
-  100% {
-    transform:rotate(-25deg);
-  }
-
- 
 }
