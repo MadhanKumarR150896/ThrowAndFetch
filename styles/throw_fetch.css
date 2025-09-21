@@ -21,6 +21,12 @@ body {
   overflow:hidden;
 }
 
+.instruction {
+  font-size:1rem;
+  font-weight: bold;
+  font-family: Verdana, Tahoma;
+  margin:1rem;
+}
 
 .sun {
   position:absolute;
