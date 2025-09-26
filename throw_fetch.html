@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport"  content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/throw_fetch.css" />
-    <link rel="icon" href="./images/Milo-icon.png" >
+    <link rel="icon" href="./images/Milo-icon.png" />
     <title>Throw And Fetch</title>
   </head>
   <body>
-    <div class="background">
-      <p class="instruction">Click on the Ball</p>
-      <div class="sun"></div>
+    <div class="background js-background">
+      <p class="instruction">
+        Click on the <b>B</b>all or press <b>B</b> to throw
+      </p>
+      <p class="instruction">
+        Click on the <b>S</b>un or press <b>S</b> to stop
+      </p>
+
+      <div class="sun js-sun"></div>
+
       <div class="human">
         <div class="human-head">
           <div class="human-head-inner"></div>
@@ -26,9 +33,10 @@
           <div class="human-right-leg"></div>
           <div class="human-left-leg"></div>
         </div>
-        
       </div>
+
       <div class="ball js-ball"></div>
+
       <div class="dog">
         <div class="dog-head">
           <div class="dog-head-inner"></div>
@@ -37,18 +45,16 @@
           <div class="dog-body-inner"></div>
         </div>
         <div class="dog-legs">
-          
-            <div class="left-fore-limb"></div>
-            <div class="right-fore-limb"></div>
-          
-            <div class="left-hind-limb"></div>
-            <div class="right-hind-limb"></div>
-          
+          <div class="left-fore-limb"></div>
+          <div class="right-fore-limb"></div>
+
+          <div class="left-hind-limb"></div>
+          <div class="right-hind-limb"></div>
         </div>
         <div class="dog-tail"></div>
       </div>
-      
     </div>
+
     <script type="module" src="./scripts/throw_fetch.js"></script>
   </body>
 </html>
