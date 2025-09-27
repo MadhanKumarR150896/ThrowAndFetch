@@ -19,8 +19,8 @@ body {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
   background: linear-gradient(45deg, rgb(142, 229, 245), rgb(238, 232, 183));
   overflow: hidden;
+  cursor:pointer;
 }
-
 
 .instruction {
   font-size: 1rem;
@@ -55,7 +55,6 @@ body {
   top: 5%;
   left: 30%;
   z-index: 101;
-
 }
 
 @keyframes headMoveH {
@@ -84,7 +83,6 @@ body {
   background-color: black;
   z-index: 100;
   border-radius: 40% 40% 30% 30%;
-
 }
 
 @keyframes bodyMove {
@@ -151,8 +149,6 @@ body {
   left: 46%;
   transform: rotate(-25deg);
   border-radius: 40%;
-
-
 }
 
 @keyframes handMove3 {
@@ -172,7 +168,6 @@ body {
   border-radius: 50%;
   border: 1px solid black;
   background-color: yellow;
-
 }
 
 @keyframes ballThrow {
@@ -241,7 +236,6 @@ body {
   bottom: 0%;
   left: 12%;
   transform: scaleX(1);
-
 }
 
 @keyframes dogTurn {
@@ -367,14 +361,12 @@ body {
   transform-origin: 0 0;
   transform: rotate(25deg);
   left: 20%;
-
 }
 
 .right-fore-limb {
   transform-origin: 0 0;
   transform: rotate(-25deg);
   left: 25%;
-
 }
 
 
@@ -394,13 +386,10 @@ body {
   left: 34%;
 }
 
-
-
 .right-hind-limb {
   transform-origin: 0 0;
   transform: rotate(-25deg);
   left: 39%;
-
 }
 
 @keyframes leftForeRun {

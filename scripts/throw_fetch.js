@@ -6,10 +6,9 @@ function throwBall() {
   background.classList.add('play');
 };
 
-function stopPLay() {
+function stopPlay() {
   background.classList.remove('play');
 };
-
 
 document.querySelector('.js-ball')
   .addEventListener('click', () => {
@@ -24,11 +23,11 @@ document.body.addEventListener('keydown', (event) => {
 
 document.querySelector('.js-sun')
   .addEventListener('click', () => {
-    stopPLay();
+    stopPlay();
   });
 
 document.body.addEventListener('keydown', (event) => {
   if (event.key === 's') {
-    stopPLay();
+    stopPlay();
   }
 });
