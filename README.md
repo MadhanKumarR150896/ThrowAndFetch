@@ -8,4 +8,7 @@
 
 3. Used **Event Listeners** to trigger the action through **click** and also by **keydown**.
 
-
+Challenges faced : 
+ --> After one cycle of action was completed , i was unable to start the sequence without pressing 'S' that is without manually stopping the animation . 
+         Then came thorugh the solution of using void with offSetWidth of the element , which doesnt allow the browser to batch all the changes at once instead renders each step designed for execution .
+ 
