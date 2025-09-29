@@ -4,7 +4,7 @@
 
 1. Have used **keyframes** to produce the animations and used time delay to create a **15 second scene with sequential flow** .
 
-2. Used **DOM** to get the ball and sun.
+2. Used **DOM** to get the ball and sun with user timed interactions.
 
 3. Used **Event Listeners** to trigger the action through **click** and also by **keydown**.
 
