@@ -9,17 +9,19 @@ body {
   height: 100vh;
   background-color: white;
   display: grid;
+  grid-template-columns: 1fr;
 }
 
 .background {
   position: relative;
-  width: 850px;
-  height: 500px;
+  width: 45vw;
+  height: auto;
+  aspect-ratio: 2/1;
   margin: auto;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
   background: linear-gradient(45deg, rgb(142, 229, 245), rgb(238, 232, 183));
   overflow: hidden;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .instruction {
@@ -198,7 +200,7 @@ body {
   }
 
   20% {
-    left: 66%
+    left: 66%;
   }
 
   40% {
@@ -206,7 +208,7 @@ body {
   }
 
   60% {
-    left: 38%
+    left: 38%;
   }
 
   80% {
@@ -214,18 +216,18 @@ body {
   }
 
   100% {
-    left: 11%
+    left: 11%;
   }
 }
 
 @keyframes ballOldPos {
   0% {
-    left: 11%
+    left: 11%;
   }
 
   100% {
     left: 3%;
-    top: 83%
+    top: 83%;
   }
 }
 
@@ -250,7 +252,7 @@ body {
   }
 
   40% {
-    left: 36%
+    left: 36%;
   }
 
   60% {
@@ -258,11 +260,11 @@ body {
   }
 
   80% {
-    left: 64%
+    left: 64%;
   }
 
   100% {
-    left: 78%
+    left: 78%;
   }
 }
 
@@ -278,7 +280,7 @@ body {
   }
 
   20% {
-    left: 64%
+    left: 64%;
   }
 
   40% {
@@ -286,7 +288,7 @@ body {
   }
 
   60% {
-    left: 36%
+    left: 36%;
   }
 
   80% {
@@ -294,13 +296,13 @@ body {
   }
 
   100% {
-    left: 9%
+    left: 9%;
   }
 }
 
 @keyframes dogOldPos {
   10% {
-    left: 9%
+    left: 9%;
   }
 
   100% {
@@ -369,7 +371,6 @@ body {
   left: 25%;
 }
 
-
 .left-hind-limb,
 .right-hind-limb {
   position: absolute;
@@ -393,7 +394,6 @@ body {
 }
 
 @keyframes leftForeRun {
-
   0%,
   40%,
   80% {
@@ -408,7 +408,6 @@ body {
 }
 
 @keyframes rightForeRun {
-
   0%,
   40%,
   80% {
@@ -423,7 +422,6 @@ body {
 }
 
 @keyframes leftHindRun {
-
   0%,
   40%,
   80% {
@@ -438,7 +436,6 @@ body {
 }
 
 @keyframes rightHindRun {
-
   0%,
   40%,
   80% {
@@ -453,7 +450,6 @@ body {
 }
 
 @keyframes leftForeReturn {
-
   0%,
   40%,
   80% {
@@ -468,7 +464,6 @@ body {
 }
 
 @keyframes rightForeReturn {
-
   0%,
   40%,
   80% {
@@ -483,7 +478,6 @@ body {
 }
 
 @keyframes leftHindReturn {
-
   0%,
   40%,
   80% {
@@ -498,7 +492,6 @@ body {
 }
 
 @keyframes rightHindReturn {
-
   0%,
   40%,
   80% {
@@ -526,7 +519,6 @@ body {
 }
 
 @keyframes tailWag {
-
   10%,
   80% {
     transform: rotate(-15deg);
@@ -539,34 +531,46 @@ body {
 }
 
 .play .human-right-hand {
-  animation: handMove1 2s 1s, handMove2 2s 13s;
+  animation:
+    handMove1 2s 1s,
+    handMove2 2s 13s;
 }
 .play .ball {
-  animation: ballThrow 6s 1s both, ballFetch 0.3s 8s forwards,
-    ballBack 3s 9s forwards linear, ballOldPos 1s 14s forwards;
+  animation:
+    ballThrow 6s 1s both,
+    ballFetch 0.3s 8s forwards,
+    ballBack 3s 9s forwards linear,
+    ballOldPos 1s 14s forwards;
 }
 .play .dog {
-  animation: dogTurn 0.3s 2s both, dogRun 3s 3s forwards linear,
-    dogTurnBack 0.3s 8s forwards, dogReturn 3s 9s forwards linear,
+  animation:
+    dogTurn 0.3s 2s both,
+    dogRun 3s 3s forwards linear,
+    dogTurnBack 0.3s 8s forwards,
+    dogReturn 3s 9s forwards linear,
     dogOldPos 0.5s 16s forwards;
 }
 .play .dog-head {
   animation: headMoveD 1s 6s;
 }
 .play .left-fore-limb {
-  animation: leftForeRun 3s 3s forwards linear,
+  animation:
+    leftForeRun 3s 3s forwards linear,
     leftForeReturn 3s 9s forwards linear;
 }
 .play .right-fore-limb {
-  animation: rightForeRun 3s 3s forwards linear,
+  animation:
+    rightForeRun 3s 3s forwards linear,
     rightForeReturn 3s 9s forwards linear;
 }
 .play .left-hind-limb {
-  animation: leftHindRun 3s 3s forwards linear,
+  animation:
+    leftHindRun 3s 3s forwards linear,
     leftHindReturn 3s 9s forwards linear;
 }
 .play .right-hind-limb {
-  animation: rightHindRun 3s 3s forwards linear,
+  animation:
+    rightHindRun 3s 3s forwards linear,
     rightHindReturn 3s 9s forwards linear;
 }
 .play .human-head {
@@ -577,4 +581,26 @@ body {
 }
 .play .human-left-hand {
   animation: handMove3 2s 13s;
+}
+
+@media (width < calc(1024/16 * 1rem)) {
+  .background {
+    width: calc(100vw - 72px);
+  }
+
+  @keyframes ballThrow {
+    50% {
+      top: 50%;
+    }
+
+    90% {
+      left: 90%;
+      top: 89%;
+    }
+
+    100% {
+      left: 90%;
+      top: 85%;
+    }
+  }
 }
